@@ -14,6 +14,8 @@
 		03F690911FAEB50A00CCD193 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F6908F1FAEB50A00CCD193 /* LaunchScreen.storyboard */; };
 		03F6909C1FAEB50A00CCD193 /* todomapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F6909B1FAEB50A00CCD193 /* todomapTests.swift */; };
 		03F690A71FAEB50A00CCD193 /* todomapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F690A61FAEB50A00CCD193 /* todomapUITests.swift */; };
+		03F690B61FAECCC800CCD193 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F690B51FAECCC800CCD193 /* MapKit.framework */; };
+		03F690B81FAECE9300CCD193 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F690B71FAECE9300CCD193 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		03F690A21FAEB50A00CCD193 /* todomapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = todomapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03F690A61FAEB50A00CCD193 /* todomapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todomapUITests.swift; sourceTree = "<group>"; };
 		03F690A81FAEB50A00CCD193 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03F690B51FAECCC800CCD193 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		03F690B71FAECE9300CCD193 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03F690B81FAECE9300CCD193 /* CoreLocation.framework in Frameworks */,
+				03F690B61FAECCC800CCD193 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +87,7 @@
 				03F6909A1FAEB50A00CCD193 /* todomapTests */,
 				03F690A51FAEB50A00CCD193 /* todomapUITests */,
 				03F690841FAEB50A00CCD193 /* Products */,
+				03F690B41FAECCC800CCD193 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +130,15 @@
 				03F690A81FAEB50A00CCD193 /* Info.plist */,
 			);
 			path = todomapUITests;
+			sourceTree = "<group>";
+		};
+		03F690B41FAECCC800CCD193 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03F690B71FAECE9300CCD193 /* CoreLocation.framework */,
+				03F690B51FAECCC800CCD193 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +209,7 @@
 				TargetAttributes = {
 					03F690821FAEB50A00CCD193 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = R7784V8UG7;
 						ProvisioningStyle = Automatic;
 					};
 					03F690961FAEB50A00CCD193 = {
@@ -412,9 +429,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R7784V8UG7;
 				INFOPLIST_FILE = todomap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.litech.todomap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.litech.todomap1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -424,9 +442,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R7784V8UG7;
 				INFOPLIST_FILE = todomap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.litech.todomap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.litech.todomap1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -505,6 +524,7 @@
 				03F690AD1FAEB50A00CCD193 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03F690AE1FAEB50A00CCD193 /* Build configuration list for PBXNativeTarget "todomapTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +533,7 @@
 				03F690B01FAEB50A00CCD193 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03F690B11FAEB50A00CCD193 /* Build configuration list for PBXNativeTarget "todomapUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +542,7 @@
 				03F690B31FAEB50A00CCD193 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
