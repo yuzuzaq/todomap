@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0384ECD51FE61CDC005B24CB /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0384ECD41FE61CDC005B24CB /* NewPlaceViewController.swift */; };
+		0384ECD71FE63097005B24CB /* UsualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0384ECD61FE63096005B24CB /* UsualViewController.swift */; };
+		0384ECD91FE630D4005B24CB /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0384ECD81FE630D4005B24CB /* SelectViewController.swift */; };
 		03F690871FAEB50A00CCD193 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F690861FAEB50A00CCD193 /* AppDelegate.swift */; };
 		03F6908C1FAEB50A00CCD193 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F6908A1FAEB50A00CCD193 /* Main.storyboard */; };
 		03F6908E1FAEB50A00CCD193 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03F6908D1FAEB50A00CCD193 /* Assets.xcassets */; };
@@ -43,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0384ECD41FE61CDC005B24CB /* NewPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
+		0384ECD61FE63096005B24CB /* UsualViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsualViewController.swift; sourceTree = "<group>"; };
+		0384ECD81FE630D4005B24CB /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		03F690831FAEB50A00CCD193 /* todomap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todomap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03F690861FAEB50A00CCD193 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03F6908B1FAEB50A00CCD193 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -123,6 +129,9 @@
 				03F691011FC14D8A00CCD193 /* ListViewController.swift */,
 				03F691031FC151E200CCD193 /* ViewController.swift */,
 				03F690FF1FC14D6F00CCD193 /* FavoriteViewController.swift */,
+				0384ECD41FE61CDC005B24CB /* NewPlaceViewController.swift */,
+				0384ECD61FE63096005B24CB /* UsualViewController.swift */,
+				0384ECD81FE630D4005B24CB /* SelectViewController.swift */,
 				03F6908A1FAEB50A00CCD193 /* Main.storyboard */,
 				03F6908D1FAEB50A00CCD193 /* Assets.xcassets */,
 				03F6908F1FAEB50A00CCD193 /* LaunchScreen.storyboard */,
@@ -302,10 +311,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				03F691041FC151E200CCD193 /* ViewController.swift in Sources */,
+				0384ECD51FE61CDC005B24CB /* NewPlaceViewController.swift in Sources */,
 				03F690871FAEB50A00CCD193 /* AppDelegate.swift in Sources */,
 				03F691001FC14D6F00CCD193 /* FavoriteViewController.swift in Sources */,
+				0384ECD91FE630D4005B24CB /* SelectViewController.swift in Sources */,
 				03F691021FC14D8A00CCD193 /* ListViewController.swift in Sources */,
 				03F690FE1FC14D5900CCD193 /* StartViewController.swift in Sources */,
+				0384ECD71FE63097005B24CB /* UsualViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,11 +469,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = R7784V8UG7;
 				INFOPLIST_FILE = todomap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.litech.todomap1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -470,11 +484,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = R7784V8UG7;
 				INFOPLIST_FILE = todomap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.litech.todomap1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

@@ -11,8 +11,7 @@ import MapKit
 import CoreLocation
 
 class ViewController: UIViewController, MKMapViewDelegate ,CLLocationManagerDelegate, UITextFieldDelegate {
-    
-    @IBOutlet weak var mapView: MKMapView!
+
     @IBOutlet var todoTextField: UITextField!
     
     var savedata: UserDefaults = UserDefaults.standard
@@ -51,84 +50,4 @@ class ViewController: UIViewController, MKMapViewDelegate ,CLLocationManagerDele
     var pinByLongPress:MKPointAnnotation!
     
     
-    
-    @IBAction func longPressMap(_ sender: UILongPressGestureRecognizer) {
-        
-        //ロングタップの最初の感知のみ受け取る
-        if(sender.state != UIGestureRecognizerState.began){
-            return
-        }
-        
-        print("long tapped \(tapped)")
-        tapped += 1
-        
-        let location:CGPoint = sender.location(in: mapView)
-        
-        let longPressedCoordinate:CLLocationCoordinate2D = mapView.convert(location, toCoordinateFrom: mapView)
-        
-        pinByLongPress = MKPointAnnotation()
-        
-        pinByLongPress.coordinate = longPressedCoordinate
-        
-        mapView.addAnnotation(pinByLongPress)
-        
-    }
-    
-    
-    
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        
-        let myPinIdentifier = "PinAnnotationIdentifier"
-        
-        let myPinview = MKPinAnnotationView(annotation: annotation, reuseIdentifier: myPinIdentifier)
-        
-        myPinview.animatesDrop = true
-        
-        myPinview.annotation = annotation
-        
-        return myPinview
-        
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-        myLocationManager = CLLocationManager()
-        
-        
-        //位置情報使用許可のリクエストを表示
-        myLocationManager.requestWhenInUseAuthorization()
-        
-        //ユーザーの位置を中心に
-        mapView.setCenter(mapView.userLocation.coordinate, animated: true)
-        
-        // 表示タイプを航空写真と地図のハイブリッドに設定
-        mapView.mapType = MKMapType.standard
-        //        mapView.mapType = MKMapType.satellite
-        //mapView.mapType = MKMapType.hybrid
-        
-        mapView.userTrackingMode = MKUserTrackingMode.follow
-        
-        func didReceiveMemoryWarning() {
-            super.didReceiveMemoryWarning()
-            // Dispose of any resources that can be recreated.
-            
-            mapView.delegate = self
-            
-            myLocationManager.delegate = self
-            
-        }
-    }
-    
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("error")
-    }
-
-}
+ }
