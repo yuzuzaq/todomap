@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		03F690871FAEB50A00CCD193 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F690861FAEB50A00CCD193 /* AppDelegate.swift */; };
-		03F690891FAEB50A00CCD193 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F690881FAEB50A00CCD193 /* ViewController.swift */; };
 		03F6908C1FAEB50A00CCD193 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F6908A1FAEB50A00CCD193 /* Main.storyboard */; };
 		03F6908E1FAEB50A00CCD193 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03F6908D1FAEB50A00CCD193 /* Assets.xcassets */; };
 		03F690911FAEB50A00CCD193 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F6908F1FAEB50A00CCD193 /* LaunchScreen.storyboard */; };
@@ -16,6 +15,14 @@
 		03F690A71FAEB50A00CCD193 /* todomapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F690A61FAEB50A00CCD193 /* todomapUITests.swift */; };
 		03F690B61FAECCC800CCD193 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F690B51FAECCC800CCD193 /* MapKit.framework */; };
 		03F690B81FAECE9300CCD193 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F690B71FAECE9300CCD193 /* CoreLocation.framework */; };
+		03F690BE1FC12E3600CCD193 /* orangebotton.png in Resources */ = {isa = PBXBuildFile; fileRef = 03F690BB1FC12E3600CCD193 /* orangebotton.png */; };
+		03F690BF1FC12E3600CCD193 /* greenbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 03F690BC1FC12E3600CCD193 /* greenbutton.png */; };
+		03F690C01FC12E3600CCD193 /* bluebottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 03F690BD1FC12E3600CCD193 /* bluebottom.png */; };
+		03F690C21FC12F9D00CCD193 /* todomap.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 03F690C11FC12F9D00CCD193 /* todomap.jpg */; };
+		03F690FE1FC14D5900CCD193 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F690FD1FC14D5900CCD193 /* StartViewController.swift */; };
+		03F691001FC14D6F00CCD193 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F690FF1FC14D6F00CCD193 /* FavoriteViewController.swift */; };
+		03F691021FC14D8A00CCD193 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F691011FC14D8A00CCD193 /* ListViewController.swift */; };
+		03F691041FC151E200CCD193 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F691031FC151E200CCD193 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +45,6 @@
 /* Begin PBXFileReference section */
 		03F690831FAEB50A00CCD193 /* todomap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todomap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03F690861FAEB50A00CCD193 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		03F690881FAEB50A00CCD193 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		03F6908B1FAEB50A00CCD193 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03F6908D1FAEB50A00CCD193 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03F690901FAEB50A00CCD193 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +57,14 @@
 		03F690A81FAEB50A00CCD193 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03F690B51FAECCC800CCD193 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		03F690B71FAECE9300CCD193 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		03F690BB1FC12E3600CCD193 /* orangebotton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangebotton.png; sourceTree = "<group>"; };
+		03F690BC1FC12E3600CCD193 /* greenbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenbutton.png; sourceTree = "<group>"; };
+		03F690BD1FC12E3600CCD193 /* bluebottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluebottom.png; sourceTree = "<group>"; };
+		03F690C11FC12F9D00CCD193 /* todomap.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = todomap.jpg; sourceTree = "<group>"; };
+		03F690FD1FC14D5900CCD193 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		03F690FF1FC14D6F00CCD193 /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		03F691011FC14D8A00CCD193 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		03F691031FC151E200CCD193 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,11 +119,18 @@
 			isa = PBXGroup;
 			children = (
 				03F690861FAEB50A00CCD193 /* AppDelegate.swift */,
-				03F690881FAEB50A00CCD193 /* ViewController.swift */,
+				03F690FD1FC14D5900CCD193 /* StartViewController.swift */,
+				03F691011FC14D8A00CCD193 /* ListViewController.swift */,
+				03F691031FC151E200CCD193 /* ViewController.swift */,
+				03F690FF1FC14D6F00CCD193 /* FavoriteViewController.swift */,
 				03F6908A1FAEB50A00CCD193 /* Main.storyboard */,
 				03F6908D1FAEB50A00CCD193 /* Assets.xcassets */,
 				03F6908F1FAEB50A00CCD193 /* LaunchScreen.storyboard */,
 				03F690921FAEB50A00CCD193 /* Info.plist */,
+				03F690BB1FC12E3600CCD193 /* orangebotton.png */,
+				03F690BC1FC12E3600CCD193 /* greenbutton.png */,
+				03F690BD1FC12E3600CCD193 /* bluebottom.png */,
+				03F690C11FC12F9D00CCD193 /* todomap.jpg */,
 			);
 			path = todomap;
 			sourceTree = "<group>";
@@ -249,8 +270,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03F690C01FC12E3600CCD193 /* bluebottom.png in Resources */,
 				03F690911FAEB50A00CCD193 /* LaunchScreen.storyboard in Resources */,
+				03F690BE1FC12E3600CCD193 /* orangebotton.png in Resources */,
+				03F690BF1FC12E3600CCD193 /* greenbutton.png in Resources */,
 				03F6908E1FAEB50A00CCD193 /* Assets.xcassets in Resources */,
+				03F690C21FC12F9D00CCD193 /* todomap.jpg in Resources */,
 				03F6908C1FAEB50A00CCD193 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,8 +301,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03F690891FAEB50A00CCD193 /* ViewController.swift in Sources */,
+				03F691041FC151E200CCD193 /* ViewController.swift in Sources */,
 				03F690871FAEB50A00CCD193 /* AppDelegate.swift in Sources */,
+				03F691001FC14D6F00CCD193 /* FavoriteViewController.swift in Sources */,
+				03F691021FC14D8A00CCD193 /* ListViewController.swift in Sources */,
+				03F690FE1FC14D5900CCD193 /* StartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
