@@ -54,7 +54,7 @@ class NewPlaceViewController: UIViewController, UISearchBarDelegate{
         //ローカル検索を実行する。
         let localSearch:MKLocalSearch = MKLocalSearch(request: request)
         localSearch.start(completionHandler: {(result, error) in
-            
+        
             for placemark in (result?.mapItems)! {
                 if(error == nil) {
                     
@@ -67,7 +67,7 @@ class NewPlaceViewController: UIViewController, UISearchBarDelegate{
                     
                 } else {
                     //エラー
-                    print(error)
+                    print("error")
                 }
             }
         })

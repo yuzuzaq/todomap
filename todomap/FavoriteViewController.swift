@@ -14,9 +14,9 @@ class FavoriteViewController: UIViewController, MKMapViewDelegate ,CLLocationMan
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet var todoTextField: UITextField!
+    @IBOutlet weak var testSearchBar: UISearchBar!
+    
 
-    
-    
     
     var testManager:CLLocationManager = CLLocationManager()
     
@@ -28,7 +28,7 @@ class FavoriteViewController: UIViewController, MKMapViewDelegate ,CLLocationMan
             todoTextField.resignFirstResponder()
         }
     }
-    @IBAction func saveMemo() {
+    @IBAction func SaveMemo() {
         savedata.set(todoTextField.text , forKey: "title")
         
     }
@@ -115,7 +115,7 @@ class FavoriteViewController: UIViewController, MKMapViewDelegate ,CLLocationMan
         
         // 表示タイプを航空写真と地図のハイブリッドに設定
         mapView.mapType = MKMapType.standard
-        //        mapView.mapType = MKMapType.satellite
+        //mapView.mapType = MKMapType.satellite
         //mapView.mapType = MKMapType.hybrid
         
         mapView.userTrackingMode = MKUserTrackingMode.follow
@@ -127,13 +127,53 @@ class FavoriteViewController: UIViewController, MKMapViewDelegate ,CLLocationMan
             mapView.delegate = self
             
             myLocationManager.delegate = self
-            
+
             
             testSearchBar.delegate = self
             
         }
     }
-
+    
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("error")
+    }
+    
+    //検索ボタン押下時の呼び出しメソッド
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        //キーボードを閉じる。
+        testSearchBar.resignFirstResponder()
+        
+        //検索条件を作成する。
+        let request = MKLocalSearchRequest()
+        request.naturalLanguageQuery = testSearchBar.text
+        
+        //検索範囲はマップビューと同じにする。
+        request.region = mapView.region
+        
+        //ローカル検索を実行する。
+        let localSearch:MKLocalSearch = MKLocalSearch(request: request)
+        localSearch.start(completionHandler: {(result, error) in
+            
+            for placemark in (result?.mapItems)! {
+                if(error == nil) {
+                    
+                    //検索された場所にピンを刺す。
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = CLLocationCoordinate2DMake(placemark.placemark.coordinate.latitude, placemark.placemark.coordinate.longitude)
+                    annotation.title = placemark.placemark.name
+                    annotation.subtitle = placemark.placemark.title
+                    self.mapView.addAnnotation(annotation)
+                    
+                } else {
+                    //エラー
+                    print(error)
+                }
+            }
+        })
+    }
+    
     
     
 }

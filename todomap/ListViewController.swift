@@ -1,4 +1,6 @@
-//
+
+
+
 //  ListViewController.swift
 //  todomap
 //
@@ -7,21 +9,23 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ListViewController: UIViewController {
     
-    @IBAction func modoru() {
+    var todoItem: Results<Item>!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+   
+    func modoru() {
         
         self.dismiss(animated: true, completion: nil)
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
+    func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -37,4 +41,5 @@ class ListViewController: UIViewController {
     }
     */
 
+}
 }
