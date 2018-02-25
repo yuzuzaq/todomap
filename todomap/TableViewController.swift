@@ -64,7 +64,7 @@ class TableViewController: UITableViewController {
                 try! realm!.write {
                     realm!.delete(deleteHistory)
                 }
-                self.さtable.reloadData()
+                self.table.reloadData()
                 
                 
             }
