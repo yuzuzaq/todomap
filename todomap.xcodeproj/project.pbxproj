@@ -160,8 +160,8 @@
 				03F690921FAEB50A00CCD193 /* Info.plist */,
 				03F690BB1FC12E3600CCD193 /* orangebotton.png */,
 				03F690BC1FC12E3600CCD193 /* greenbutton.png */,
-				03F690BD1FC12E3600CCD193 /* bluebottom.png */,
 				03F690C11FC12F9D00CCD193 /* todomap.jpg */,
+				03F690BD1FC12E3600CCD193 /* bluebottom.png */,
 				03FB33C2200AFBAF0093F738 /* AppDelegate.swift */,
 				0382EEC920301FB400B2ECC2 /* ToDoRealmObject.swift */,
 			);

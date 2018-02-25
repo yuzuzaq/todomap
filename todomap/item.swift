@@ -8,9 +8,6 @@
 
 import RealmSwift
 
-
-
-
 class Item: Object{
     dynamic var name: String? = nil
     var ido: Double? = nil

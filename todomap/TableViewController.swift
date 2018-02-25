@@ -13,67 +13,73 @@ import RealmSwift
 class TableViewController: UITableViewController {
     
     var todoitem: Results<Item>!
-
+    let realm = try! Realm()
+    var cellnames: Results<Item>!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        do{
-            let; realm = try Realm()
-            todoitem = Realm.objects(Item)
-            tableView.reloadData()
-        }catch{
-            
-        }
-            
-        }
-
-        // Do any additional setup after loading the view.
+        cellnames = realm.objects(Item.self)
     }
-
+    
+    
+    // Do any additional setup after loading the view.
+    
+    
     func viewWillAppear(animated: Bool) {
-    viewWillAppear(animated: animated)
-    tableView.reloadData()
-}
-
-    func didReceiveMemoryWarning() {
-    didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
-func tableView(tableView: UITableView, cellForRowAtIndexPath indexpath: NSIndexPath)->UITableViewCell {
-    let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
-    
-    let object = [indexpath.row]
-    
-    cell.textLabel?.text = object.count
-    return cell
-}
-
-// TableViewのCellの削除を行った際に、Realmに保存したデータを削除する
-func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    
-    
-    if(editingStyle == UITableViewCellEditingStyle.delete) {
-        do{
-            let realm = try Realm()
-            try realm.write {
-                realm.delete (todoItem[indexPath.row])
-            }
-            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.fade)
-        }catch{
-        }
+        
+        viewWillAppear(animated: animated)
+        cellnames = realm.objects(Item.self)
         tableView.reloadData()
     }
-}
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    override func didReceiveMemoryWarning() {
+        didReceiveMemoryWarning()
     }
-    */
+    
+    // Dispose of any resources that can be recreated.
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (cellnames.count)
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
+        cell.textLabel?.text = cellnames[indexPath.row].name
+        return cell
+    }
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 
+            if editingStyle == UITableViewCellEditingStyle.delete {
+                
+                
+                // これはRealmSwiftでデータを削除しているケース
+                let deleteHistory = self.result!
+                
+                try! realm!.write {
+                    realm!.delete(deleteHistory)
+                }
+                self.さtable.reloadData()
+                
+                
+            }
+        }
+}
 
+/*sd^
+ 
+ 
+ 
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destinationViewController.
+ // Pass the selected object to the new view controller.
+ }
+ */
