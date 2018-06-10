@@ -12,14 +12,11 @@ import RealmSwift
 
 class TableViewController: UITableViewController {
     
-    var todoitem: Results<Item>!
     let realm = try! Realm()
     var cellnames: Results<Item>!
-    
-    
+    let cellnumber = Item()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         cellnames = realm.objects(Item.self)
     }
     
@@ -41,7 +38,7 @@ class TableViewController: UITableViewController {
     // Dispose of any resources that can be recreated.
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (cellnames.count)
+        return cellnames.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,26 +46,21 @@ class TableViewController: UITableViewController {
         cell.textLabel?.text = cellnames[indexPath.row].name
         return cell
     }
+    
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-
-            if editingStyle == UITableViewCellEditingStyle.delete {
-                
-                
-                // これはRealmSwiftでデータを削除しているケース
-                let deleteHistory = self.result!
-                
-                try! realm!.write {
-                    realm!.delete(deleteHistory)
-                }
-                self.table.reloadData()
-                
-                
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            let newDog = cellnames[indexPath.row]
+            let realm = try! Realm()
+            try! realm.write {
+                realm.delete(newDog)
             }
+            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.automatic)
         }
+    }
 }
 
 /*sd^

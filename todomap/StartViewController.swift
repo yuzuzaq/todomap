@@ -7,29 +7,57 @@
 //
 
 import UIKit
+import CoreLocation
 
-class StartViewController: UIViewController {
-
+class viewController: UIViewController, CLLocationManagerDelegate {
+    
+    var myLocationManager: CLLocationManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        checkLocationAuthorization(callback: startLocationService)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status != CLAuthorizationStatus.authorizedAlways {
+            return
+        }
+        
+        if !CLLocationManager.locationServicesEnabled() {
+            return
+        }
+        
+        startLocationService(manager: manager)
     }
-    */
+    
+    func checkLocationAuthorization(callback: (CLLocationManager) -> Void) {
+        let status = CLLocationManager.authorizationStatus()
+        if status == CLAuthorizationStatus.restricted || status == CLAuthorizationStatus.denied {
+            return
+        }
+        
+        myLocationManager = CLLocationManager()
+        myLocationManager.delegate = self
+        
+        if status == CLAuthorizationStatus.notDetermined {
+            myLocationManager.requestAlwaysAuthorization()
+        } else if !CLLocationManager.locationServicesEnabled() {
+            return
+        } else {
+            callback(myLocationManager)
+        }
+    }
+    
+    func startLocationService(manager: CLLocationManager) {
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.distanceFilter = kCLDistanceFilterNone
+}
+
+
+
+
+
+
 
 }

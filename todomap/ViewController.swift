@@ -49,7 +49,7 @@ class ViewController: UIViewController, MKMapViewDelegate ,CLLocationManagerDele
         myLocationManager.requestWhenInUseAuthorization()
         
         //ユーザーの位置を中心に
-        mapView.setCenter(mapView.userLocation.coordinate, animated: true)
+        //mapView.setCenter(mapView.userLocation.coordinate, animated: true)
         
 
         mapView.mapType = MKMapType.standard
